@@ -17,6 +17,7 @@ func main() {
 	assignment()
 	sortingSlices()
 	copySliceElements()
+	copyArrays()
 }
 
 func assignment() {
@@ -71,4 +72,18 @@ func copySliceElements() {
 	copy_4 := copy(slc1, slc4)
 	fmt.Println("\nSlice:", slc1)
 	fmt.Println("Total number of elements copied:", copy_4)
+}
+
+func copyArrays() {
+	my_arr1 := [5]string{"a", "b", "c", "d", "e"}
+	my_arr2 := my_arr1 //  copy by value
+	my_arr1[0] = "z"
+	fmt.Println("my_arr1", my_arr1)
+	fmt.Println("my_arr2", my_arr2)
+
+	my_arr3 := [6]int{12, 456, 67, 65, 34, 34}
+	my_arr4 := &my_arr3 // copy by reference
+	my_arr3[0] = 50
+	fmt.Println("my_arr3", my_arr3)
+	fmt.Println("my_arr4", *my_arr4)
 }
